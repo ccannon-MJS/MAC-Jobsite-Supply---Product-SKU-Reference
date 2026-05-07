@@ -9,8 +9,8 @@
 body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:#f4f4f1;color:#1a1a1a;font-size:14px}
 header{background:#1a1a1a;color:#fff;padding:1.1rem 1.5rem;display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:8px}
 header h1{font-size:17px;font-weight:700;letter-spacing:-0.01em}
-header p{font-size:11px;color:#999;margin-top:3px}
-.badge{font-size:10px;background:#333;border:1px solid #555;border-radius:4px;padding:2px 8px;color:#ccc;white-space:nowrap;align-self:center}
+header p{font-size:11px;color:#aaa;margin-top:3px}
+.badge-hdr{font-size:10px;background:#333;border:1px solid #555;border-radius:4px;padding:2px 8px;color:#ccc;white-space:nowrap;align-self:center}
 .main{max-width:1200px;margin:0 auto;padding:1.1rem 1rem 3rem}
 .top-bar{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:.85rem}
 #search{flex:1;min-width:220px;padding:9px 14px;border:1px solid #d8d8d5;border-radius:8px;font-size:13px;background:#fff;outline:none;color:#1a1a1a}
@@ -28,26 +28,26 @@ header p{font-size:11px;color:#999;margin-top:3px}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:8px}
 .card{background:#fff;border:1px solid #e6e6e2;border-radius:10px;padding:13px 14px;display:flex;gap:11px;align-items:flex-start;transition:border-color .12s,box-shadow .12s}
 .card:hover{border-color:#bbb;box-shadow:0 1px 5px rgba(0,0,0,.07)}
-.card.low-stock{border-left:3px solid #e8a030}
-.card.in-stock{border-left:3px solid #3a9e6a}
-.left{flex-shrink:0;display:flex;flex-direction:column;align-items:center;gap:5px}
-.sku-badge{font-family:'SF Mono','Fira Mono','Menlo',monospace;font-size:9.5px;font-weight:700;background:#f3f3f0;border:1px solid #ddd;border-radius:4px;padding:3px 6px;white-space:nowrap;color:#333;text-align:center;max-width:90px;word-break:break-all}
-.price-tag{font-size:11px;font-weight:700;color:#1a1a1a}
-.qty-tag{font-size:9px;padding:2px 5px;border-radius:3px;font-weight:600}
+.card-in{border-left:3px solid #3a9e6a}
+.card-low{border-left:3px solid #e8a030}
+.card-out{border-left:3px solid #e0e0db}
+.left{flex-shrink:0;display:flex;flex-direction:column;align-items:center;gap:5px;min-width:80px}
+.sku-badge{font-family:'SF Mono','Fira Mono','Menlo',monospace;font-size:9.5px;font-weight:700;background:#f3f3f0;border:1px solid #ddd;border-radius:4px;padding:3px 6px;white-space:nowrap;color:#333;text-align:center;word-break:break-all}
+.price-tag{font-size:12px;font-weight:700;color:#1a1a1a}
+.qty-tag{font-size:9px;padding:2px 6px;border-radius:3px;font-weight:600;text-align:center}
 .qty-in{background:#e8f5ee;color:#2a6644}
-.qty-zero{background:#f5e8e8;color:#8a2a2a}
 .qty-low{background:#fff4e0;color:#8a5200}
+.qty-out{background:#f5f5f3;color:#999}
 .card-body{flex:1;min-width:0}
-.card-name{font-size:12px;font-weight:600;color:#1a1a1a;line-height:1.4;margin-bottom:5px}
-.card-cat{font-size:10px;color:#bbb;margin-bottom:6px;font-weight:500;letter-spacing:.03em}
-.tabs{display:flex;gap:0;margin-bottom:7px;border-bottom:1px solid #eee}
-.tab{font-size:10px;padding:3px 8px;cursor:pointer;color:#aaa;border-bottom:2px solid transparent;margin-bottom:-1px;transition:color .1s;font-weight:500}
-.tab.active{color:#1a1a1a;border-bottom-color:#1a1a1a}
-.tab-content{display:none;font-size:11px;color:#555;line-height:1.6}
-.tab-content.active{display:block}
-.tab-content b{font-weight:600;color:#1a1a1a}
-.tip-row{margin-top:5px;padding:6px 8px;background:#f7f6f2;border-radius:5px;font-size:10.5px;color:#444;line-height:1.55}
-.tip-label{font-weight:700;font-size:9px;text-transform:uppercase;letter-spacing:.05em;color:#888;display:block;margin-bottom:2px}
+.card-name{font-size:12px;font-weight:600;color:#1a1a1a;line-height:1.4;margin-bottom:3px}
+.card-cat{font-size:10px;color:#bbb;margin-bottom:7px;font-weight:500;letter-spacing:.03em;text-transform:uppercase}
+.tabs{display:flex;gap:0;margin-bottom:6px;border-bottom:1px solid #eee}
+.tab{font-size:10px;padding:3px 9px;cursor:pointer;color:#aaa;border-bottom:2px solid transparent;margin-bottom:-1px;transition:color .1s;font-weight:500;background:none;border-top:none;border-left:none;border-right:none}
+.tab.on{color:#1a1a1a;border-bottom-color:#1a1a1a}
+.pane{display:none;font-size:11px;color:#666;line-height:1.6}
+.pane.on{display:block}
+.tip-box{margin-top:4px;padding:6px 9px;background:#f7f6f2;border-radius:5px;font-size:10.5px;color:#444;line-height:1.55}
+.tip-lbl{font-weight:700;font-size:9px;text-transform:uppercase;letter-spacing:.05em;color:#999;display:block;margin-bottom:2px}
 .empty{text-align:center;color:#bbb;font-size:14px;padding:3rem 1rem}
 footer{text-align:center;font-size:11px;color:#bbb;margin-top:2rem;padding-top:1.5rem;border-top:1px solid #e8e8e5}
 @media(max-width:600px){.grid{grid-template-columns:1fr}header h1{font-size:15px}}
@@ -56,87 +56,76 @@ footer{text-align:center;font-size:11px;color:#bbb;margin-top:2rem;padding-top:1
 <body>
 <header>
   <div>
-    <h1>MAC Jobsite Supply — Product &amp; SKU Reference</h1>
-    <p>975 products &nbsp;·&nbsp; Use cases, target customers &amp; sales tips per SKU</p>
+    <h1>MAC Jobsite Supply &mdash; Product &amp; SKU Reference</h1>
+    <p>975 products &nbsp;&middot;&nbsp; Use cases, target customers &amp; sales tips per SKU</p>
   </div>
-  <div class="badge">Internal Sales Tool</div>
+  <span class="badge-hdr">Internal Sales Tool</span>
 </header>
-
 <div class="main">
   <div class="top-bar">
-    <input type="text" id="search" placeholder="Search SKU, product name, or category…" oninput="render()">
+    <input type="text" id="search" placeholder="Search SKU, product name, or category&hellip;" oninput="render()">
     <span class="stats" id="stats"></span>
   </div>
   <div class="filter-row" id="filters"></div>
   <div id="output"></div>
-  <footer>MAC Jobsite Supply LLC &nbsp;·&nbsp; Internal reference only &nbsp;·&nbsp; Prices subject to change</footer>
+  <footer>MAC Jobsite Supply LLC &nbsp;&middot;&nbsp; Internal reference only &nbsp;&middot;&nbsp; Prices subject to change</footer>
 </div>
-
 <script>
-const catInfo = {
-  'Abrasive':{color:'#8B3A3A',use:'Metal grinding, surface prep, weld cleanup, rust/scale removal, deburring sharp edges, blending welds.',target:'Iron workers, welders, pipefitters, steel erectors, fabricators, general contractors.',tip:'<b>Bundle move:</b> Pair flap discs and cut-off wheels with angle grinder sales — "what are you cutting?" opens the conversation. Ask about material (mild steel vs. stainless vs. aluminum) to recommend correct grit and bond. Push case quantities for better margins and fewer reorder calls. Remind crews that worn wheels are a safety/OSHA hazard.'},
-  'Adhesives':{color:'#6B4E1A',use:'Structural bonding, setting injection anchors, concrete crack repair, bonding dissimilar materials.',target:'Masonry contractors, concrete subs, tile setters, general contractors.',tip:'<b>Anchor pairing:</b> Every anchor SKU is a companion adhesive sale. Ask "how are you setting your anchors?" and introduce the chemical anchor system. Highlight pull-strength specs to structural GCs.'},
-  'Air Tools':{color:'#2E5A8E',use:'Pneumatic fastening, impact wrenches, nailers, blow guns, compressor-driven equipment.',target:'Framers, roofers, finish carpenters, auto/truck mechanics, general contractors.',tip:'<b>System sell:</b> Air tools need a compressor, hose, and fittings — sell the whole system. Ask about PSI and CFM requirements to match the tool to the air supply.'},
-  'Anchor':{color:'#5C3D8F',use:'Concrete anchoring for equipment pads, pipe hangers, structural attachments, seismic bracing, rebar dowels.',target:'MEP contractors (mechanical, electrical, plumbing), concrete contractors, ironworkers, GCs.',tip:'<b>Spec compliance:</b> Ask about ICC-ES approval requirements — many GCs require certified anchors. Drop-in anchors need a setting tool; bundle it. Ask about concrete thickness, edge distance, and load to upsell the right size.'},
-  'Annular Cutter':{color:'#3D6B3D',use:'Precision holes in structural steel plate, beams, columns, HVAC duct, pipe flanges — faster and cleaner than twist drill.',target:'Ironworkers, structural steel fabricators, HVAC contractors, welders, millwrights.',tip:'<b>Replacement cycle:</b> Annular cutters dull in high-use environments — ask how many holes per week to set a reorder cadence. Sell cutting oil (Dynatex/Starrett) with every cutter — it triples tool life. Ask about mag drill brand (Hougen, Jancy, Milwaukee) to confirm shank compatibility.'},
-  'Batteries':{color:'#B07000',use:'Powering Milwaukee M18 cordless platform tools on jobsite.',target:'Any contractor running Milwaukee M18 tools — virtually every trade.',tip:'<b>Platform lock-in:</b> Once a crew is on M18, every new tool purchase is a battery opportunity. Upsell from 2.0Ah to 5.0Ah/6.0Ah HD packs — more runtime, fewer swap stops. Sell multi-packs for crews with multiple tools running simultaneously.'},
-  'Bit Accessories':{color:'#5A5A8E',use:'Screw gun bit holders, magnetic bit holders, extensions, depth attachments, bit sets for all drive types.',target:'All trades — drywall subs, framers, electricians, plumbers, GCs.',tip:'<b>Add-on every time:</b> Never sell a drill bit, driver, or screw without asking "do you need bit holders or extensions?" These are high-margin accessories with fast turnover. Magnetic bit holders reduce drop time on elevated work.'},
-  'Cleaning':{color:'#5A7A5A',use:'Jobsite degreasing, solvent cleaning, surface prep before adhesives or coatings, parts cleaning.',target:'All contractors, maintenance crews.',tip:'<b>Consumable revenue:</b> Cleaning supplies are recurring purchases — set up a standing order for active jobsites. Pair with surface prep before adhesive or sealant sales.'},
-  'Compressor':{color:'#8E5A2E',use:'Powering pneumatic tools, tire inflation, blowout, pressure testing.',target:'Framers, roofers, finish carpenters, general contractors, HVAC crews.',tip:'<b>System approach:</b> Ask about CFM demand (how many tools running at once) before recommending a unit. Pair with air hose, fittings, and pneumatic tools. Portable pancake for finish work; twin-stack for framing.'},
-  'Drill Bits':{color:'#2E5A5A',use:'Drilling through wood, metal, concrete, masonry, steel plate, stainless steel for fastener holes, pilot holes, clearance holes.',target:'All trades — electricians, plumbers, framers, ironworkers, concrete subs.',tip:'<b>Material match:</b> "What are you drilling through?" is your opener. Cobalt for stainless and hard metals; SDS for concrete; standard HSS for wood/mild steel. Sell spare sets — bits break on jobsites. XL5 Brute line = value; cobalt = premium upsell.'},
-  'Electric Motor':{color:'#4A4A8E',use:'Replacement motors for industrial equipment, pumps, compressors.',target:'Maintenance contractors, facilities managers, millwrights.',tip:'<b>Emergency replacement:</b> Position as a go-to for motor failures — downtime is expensive. Build a relationship with maintenance managers who need fast turnaround.'},
-  'Extension Cord':{color:'#8E6A2E',use:'Powering tools and equipment at job sites where permanent power is unavailable, temporary power distribution.',target:'All contractors — electricians, framers, concrete crews, GCs.',tip:'<b>Gauge matters:</b> Educate customers on 12/3 vs. 14/3 — undersized cords trip breakers and damage tools. 100 ft. lighted-end cords are OSHA-friendly (visible when plugged in). Sell multiple per crew — cords disappear on large sites.'},
-  'Extractors':{color:'#6B3D3D',use:'Removing broken bolts, damaged screws, stripped fasteners from metal and wood.',target:'Maintenance contractors, ironworkers, pipefitters, general contractors.',tip:'<b>Problem solver sale:</b> Extractors are often an urgent need — broken bolt means downtime. Keep in stock. Pair with drill bits (pre-drill required). Upsell to a full set rather than single size.'},
-  'Fall Protection':{color:'#8E2E2E',use:'OSHA-compliant fall arrest for work above 6 ft — roofing, structural steel, leading edges, elevated platforms.',target:'Roofers, ironworkers, steel erectors, GCs with OSHA oversight, safety managers.',tip:'<b>OSHA compliance urgency:</b> OSHA 1926.502 requires fall protection at 6 ft in construction — this is non-negotiable. Sell the complete system: harness + lanyard or SRL + anchor point. SRLs command premium pricing and are preferred for mobility. Annual inspection and replacement is mandatory — set a reminder for reorder.'},
-  'Fasteners':{color:'#6B5A2E',use:'Attaching track to concrete and steel (powder actuated), nail-in for masonry, plastic anchors for light-duty, split drive for hollow block.',target:'Drywall contractors, framers, MEP subs, concrete contractors, GCs.',tip:'<b>Match to tool:</b> Powder actuated pins must match the specific Ramset/Hilti/Simpson tool — confirm the tool brand before selling. Sell pins by the box of 100 — high-volume users go through a box fast. Nail-in anchors are a fast alternative to drilling; lead with speed advantage.'},
-  'Hand Tools':{color:'#4A4A4A',use:'Wrenches, pliers, punches, chisels, pry bars, shovels, hammers — essential every-trade tools.',target:'All trades.',tip:'<b>Brand premium sell:</b> Proto and Milwaukee carry strong warranties — position against cheap imports. "Buy once, cry once" resonates with experienced tradespeople. Wrenches are frequently lost/stolen on jobsites; sell multi-packs or replacements proactively.'},
-  'Hoists':{color:'#5A3D6B',use:'Lifting materials, equipment, and loads — chain hoists, lever hoists, beam trolleys.',target:'Ironworkers, riggers, millwrights, mechanical contractors, HVAC crews.',tip:'<b>Rated capacity = liability:</b> Never let a customer guess on hoist capacity — ask about the heaviest load. Pair with rigging chain and shackles. Annual inspection is required; position yourself as their inspection reminder service for recurring sales.'},
-  'Hole Cutter':{color:'#3D5A6B',use:'Large-diameter holes in steel plate, pipe flanges, conduit entry points, HVAC ductwork, structural members.',target:'HVAC contractors, electricians, ironworkers, structural steel fabricators.',tip:'<b>Carbide vs. HSS:</b> CT7 carbide = harder steel and longer production runs; pitch the upgrade when the customer mentions high volume. Sell pilot pins separately — they wear faster than the cutter body. Ask about cutter brand compatibility (Milwaukee, Hougen).'},
-  'Impact Socket':{color:'#3D3D6B',use:'High-torque fastening of structural bolts, heavy equipment, suspension components — designed for impact wrench use.',target:'Ironworkers, structural steel erectors, heavy equipment mechanics, mechanical contractors.',tip:'<b>Impact-rated only:</b> Educate customers that standard chrome sockets crack under impact — SHOCKWAVE or equivalent is required. Match drive size (1/2", 3/4", 1") to their impact gun. Sell full sets for new crews just starting structural work.'},
-  'LUMBER':{color:'#7A5A2E',use:'Structural framing, blocking, temporary bracing, concrete forms.',target:'Framers, concrete subs, GCs.',tip:'<b>Convenience premium:</b> Jobsite delivery of lumber adds value over lumberyard trips. Pair with framing screws and fasteners for a complete material package.'},
-  'Ladders':{color:'#6B4A2E',use:'Accessing elevated work areas, electrical panels, above-ceiling work, roofing, painting.',target:'All trades — electricians, HVAC, drywall, painters, GCs.',tip:'<b>Type matters:</b> Type 1A (300 lb.) fiberglass is the commercial standard — fiberglass = electrical safety. Werner = trusted brand with strong warranty. Lead with OSHA weight rating compliance; ladder failures are a major liability.'},
-  'Locks':{color:'#4A4A6B',use:'Jobsite security, equipment lockout/tagout (LOTO) compliance, storage containers.',target:'All contractors, safety managers, GCs requiring LOTO programs.',tip:'<b>LOTO compliance angle:</b> OSHA LOTO standard (1910.147) requires individual locks per authorized employee — this is a volume sale. Sell sets of 6-12 for crew lockout programs. Master-keyed sets for supervisors are an easy upsell.'},
-  'Lubricants':{color:'#5A6B3D',use:'Thread lubrication, anti-seize on bolts, penetrating oil for frozen fasteners, cutting oil for drilling and tapping, equipment maintenance.',target:'All trades — especially ironworkers, pipefitters, machinists, maintenance contractors.',tip:'<b>Bundle with consumables:</b> Every drill bit and tap set sale should include cutting oil — it triples tool life and is a $10-15 add-on. WD-40 is a universal impulse buy. Anti-seize is critical for stainless and dissimilar metals; electricians and plumbers use it heavily.'},
-  'Marking Chalk':{color:'#5A5A3D',use:'Snap line layout for framing, concrete screeds, roofing, tile installation, rebar placement reference.',target:'Framers, concrete contractors, roofers, tile setters, carpenters.',tip:'<b>Chalk reel bundle:</b> Never sell chalk without asking if they need a chalk reel. Blue is standard; red for permanent marking; fluorescent for roofing. High-visibility chalk sells easily to concrete crews working outdoors.'},
-  'Marking Paint':{color:'#5A3D5A',use:'Utility marking, rebar/anchor layout on concrete, jobsite boundaries, survey references, color-coded work zones.',target:'Concrete subs, survey crews, GCs, utility contractors.',tip:'<b>Volume opportunity:</b> Large concrete pours and site layout jobs go through multiple cans. Ask about the project scope — a big pour could be a 24-can order. Upside-down marking paint for inverted tip applicator wands is a specialty item that earns loyalty.'},
-  'Measurement':{color:'#3D6B6B',use:'Tape measures, levels, layout tools for precise construction measurements.',target:'All trades.',tip:'<b>High-turnover item:</b> Tape measures take abuse and get lost constantly — sell multi-packs. Milwaukee and Stabila are brand-preferred. Magnetic tapes for metalwork crews. Add to every order as a suggested add-on.'},
-  'Milwaukee':{color:'#C8310A',use:'Full range of M18 cordless and corded power tools — drills, saws, impact drivers, grinders, pipe wrenches, pliers, and accessories for every trade.',target:'All trades invested in the Milwaukee M18 platform — electricians, plumbers, framers, concrete subs, ironworkers, GCs.',tip:'<b>Ecosystem advantage:</b> Milwaukee\'s M18 platform is the #1 reason contractors standardize — one battery for every tool. Demo tools whenever possible; "try before you buy" closes on premium tools. Highlight the 5-year tool warranty. Parts availability (Milwaukee:Parts) reduces replacement cost — position as TCO savings vs. competitors.'},
-  'Miscellaneous- Office, etc.':{color:'#888',use:'Office and administrative supplies for business operations.',target:'Business owners, office managers.',tip:'<b>Operational support:</b> These items keep the business running — position as a one-stop-shop convenience for contractors who order tools and supplies together.'},
-  'POWER TOOL':{color:'#8E2E5A',use:'Angle grinders, corded saws, specialty power tools for heavy-duty cutting, grinding, and fabrication.',target:'Welders, fabricators, ironworkers, concrete contractors, general contractors.',tip:'<b>Corded = continuous power:</b> Position corded tools for applications where runtime matters — production grinding, heavy cutting. Metabo grinders are preferred by welders for durability. Ask about current tool brand and warranty needs.'},
-  'PPE':{color:'#2E6B8E',use:'Gloves, hard hats, safety glasses, hi-viz vests, coveralls, respirators, earplugs — mandatory OSHA PPE for all construction sites.',target:'All contractors, safety managers, GCs enforcing PPE compliance on job sites.',tip:'<b>Compliance + crew size = volume:</b> GCs require all subs to provide PPE — ask about crew size for bulk pricing. Hi-viz vests and hard hats turn over constantly (lost, damaged, stolen). Tyvek coveralls for hazmat/concrete/spray work = recurring consumable. Safety glasses scratch and break — sell by the box of 10+. Build a "jobsite safety kit" bundle for new crews.'},
+const CI={
+  'Abrasive':{color:'#8B3A3A',use:'Metal grinding, surface prep, weld cleanup, rust/scale removal, deburring sharp edges.',target:'Iron workers, welders, pipefitters, steel erectors, fabricators, GCs.',tip:'<b>Bundle move:</b> Pair flap discs and cut-off wheels with angle grinder sales. Ask about material (mild steel vs. stainless vs. aluminum) to nail grit and bond type. Push case quantities — worn abrasives are an OSHA hazard and a repeat sale.'},
+  'Adhesives':{color:'#6B4E1A',use:'Structural bonding, setting injection anchors, concrete crack repair.',target:'Masonry contractors, concrete subs, tile setters, GCs.',tip:'<b>Anchor pairing:</b> Every anchor SKU is a companion adhesive sale. Ask "how are you setting your anchors?" Highlight pull-strength specs to structural GCs.'},
+  'Air Tools':{color:'#2E5A8E',use:'Pneumatic fastening, impact wrenches, nailers, blow guns.',target:'Framers, roofers, finish carpenters, auto/truck mechanics, GCs.',tip:'<b>System sell:</b> Air tools need a compressor, hose, and fittings — sell the whole system. Ask about PSI and CFM requirements to match the tool to the supply.'},
+  'Anchor':{color:'#5C3D8F',use:'Concrete anchoring for equipment, pipe hangers, structural attachments, seismic bracing.',target:'MEP contractors, concrete contractors, ironworkers, GCs.',tip:'<b>Spec compliance:</b> Ask about ICC-ES approval requirements. Drop-in anchors need a setting tool — bundle it. Ask about concrete thickness and load requirements to upsell the right size.'},
+  'Annular Cutter':{color:'#3D6B3D',use:'Precision holes in structural steel plate, beams, columns, HVAC duct, pipe flanges.',target:'Ironworkers, structural steel fabricators, HVAC contractors, welders, millwrights.',tip:'<b>Replacement cycle:</b> Ask how many holes per week to set a reorder cadence. Sell cutting oil with every cutter — it triples tool life. Confirm mag drill brand for shank compatibility.'},
+  'Batteries':{color:'#B07000',use:'Powering Milwaukee M18 cordless platform tools on jobsite.',target:'Any contractor running Milwaukee M18 tools — virtually every trade.',tip:'<b>Platform lock-in:</b> Once a crew is M18, every new tool is a battery opportunity. Upsell from 2.0Ah to 5.0/6.0Ah HD packs. Sell multi-packs for crews with multiple tools running simultaneously.'},
+  'Bit Accessories':{color:'#5A5A8E',use:'Screw gun bit holders, magnetic bit holders, extensions, depth attachments.',target:'All trades — drywall subs, framers, electricians, plumbers, GCs.',tip:'<b>Add-on every time:</b> Never sell a drill bit or screw without asking "need bit holders or extensions?" High-margin, fast-turnover accessories. Magnetic holders reduce drop time on elevated work.'},
+  'Cleaning':{color:'#5A7A5A',use:'Jobsite degreasing, solvent cleaning, surface prep before adhesives or coatings.',target:'All contractors, maintenance crews.',tip:'<b>Consumable revenue:</b> Set up a standing order for active jobsites. Pair with surface prep before adhesive or sealant sales.'},
+  'Compressor':{color:'#8E5A2E',use:'Powering pneumatic tools, tire inflation, blowout, pressure testing.',target:'Framers, roofers, finish carpenters, GCs, HVAC crews.',tip:'<b>System approach:</b> Ask about CFM demand before recommending a unit. Pair with air hose, fittings, and pneumatic tools. Portable pancake for finish work; twin-stack for framing.'},
+  'Drill Bits':{color:'#2E5A5A',use:'Drilling through wood, metal, concrete, masonry, steel plate, stainless steel.',target:'All trades — electricians, plumbers, framers, ironworkers, concrete subs.',tip:'<b>Material match:</b> "What are you drilling through?" is your opener. Cobalt for stainless; SDS for concrete; standard HSS for wood/mild steel. Sell spare sets — bits break on jobsites constantly.'},
+  'Electric Motor':{color:'#4A4A8E',use:'Replacement motors for industrial equipment, pumps, compressors.',target:'Maintenance contractors, facilities managers, millwrights.',tip:'<b>Emergency replacement:</b> Position as a go-to for motor failures — downtime is expensive. Build relationships with maintenance managers who need fast turnaround.'},
+  'Extension Cord':{color:'#8E6A2E',use:'Powering tools at job sites where permanent power is unavailable, temporary power distribution.',target:'All contractors — electricians, framers, concrete crews, GCs.',tip:'<b>Gauge matters:</b> Educate on 12/3 vs. 14/3 — undersized cords trip breakers and damage tools. Lighted-end cords are OSHA-friendly. Sell multiple per crew — cords disappear on large sites.'},
+  'Extractors':{color:'#6B3D3D',use:'Removing broken bolts, damaged screws, stripped fasteners from metal and wood.',target:'Maintenance contractors, ironworkers, pipefitters, GCs.',tip:'<b>Problem solver sale:</b> Extractors are often urgent — broken bolt means downtime. Keep in stock. Pair with drill bits (pre-drill required). Upsell to a full set rather than single size.'},
+  'Fall Protection':{color:'#8E2E2E',use:'OSHA-compliant fall arrest for work above 6 ft — roofing, structural steel, elevated platforms.',target:'Roofers, ironworkers, steel erectors, GCs with OSHA oversight, safety managers.',tip:'<b>OSHA urgency:</b> Fall protection at 6 ft is non-negotiable. Sell the complete system: harness + lanyard or SRL + anchor point. Annual inspection and replacement is mandatory — set a reorder reminder.'},
+  'Fasteners':{color:'#6B5A2E',use:'Attaching track to concrete and steel (powder actuated), nail-in for masonry, plastic anchors for light-duty.',target:'Drywall contractors, framers, MEP subs, concrete contractors, GCs.',tip:'<b>Match to tool:</b> Powder actuated pins must match the Ramset/Hilti/Simpson tool — confirm brand first. Sell pins by the box of 100. Nail-in anchors are faster than drilling; lead with speed advantage.'},
+  'Hand Tools':{color:'#4A4A4A',use:'Wrenches, pliers, punches, chisels, pry bars, shovels — every-trade essential tools.',target:'All trades.',tip:'<b>Brand premium:</b> Proto and Milwaukee carry strong warranties — position against cheap imports. "Buy once, cry once" resonates with experienced tradespeople. Wrenches are frequently lost; sell multi-packs proactively.'},
+  'Hoists':{color:'#5A3D6B',use:'Lifting materials, equipment, and loads — chain hoists, lever hoists, beam trolleys.',target:'Ironworkers, riggers, millwrights, mechanical contractors, HVAC crews.',tip:'<b>Rated capacity = liability:</b> Never let a customer guess on hoist capacity. Pair with rigging chain and shackles. Annual inspection is required — position as their inspection reminder for recurring sales.'},
+  'Hole Cutter':{color:'#3D5A6B',use:'Large-diameter holes in steel plate, pipe flanges, conduit entry, HVAC ductwork, structural members.',target:'HVAC contractors, electricians, ironworkers, structural fabricators.',tip:'<b>Carbide vs. HSS:</b> CT7 carbide = harder steel and longer runs; pitch the upgrade for high-volume customers. Sell pilot pins separately — they wear faster. Ask about cutter brand compatibility.'},
+  'Impact Socket':{color:'#3D3D6B',use:'High-torque fastening of structural bolts, heavy equipment — designed for impact wrench use.',target:'Ironworkers, structural steel erectors, heavy equipment mechanics, mechanical contractors.',tip:'<b>Impact-rated only:</b> Standard chrome sockets crack under impact — SHOCKWAVE or equivalent required. Match drive size (1/2", 3/4", 1") to their impact gun. Sell full sets for new structural crews.'},
+  'LUMBER':{color:'#7A5A2E',use:'Structural framing, blocking, temporary bracing, concrete forms.',target:'Framers, concrete subs, GCs.',tip:'<b>Convenience premium:</b> Jobsite delivery eliminates lumberyard trips. Pair with framing screws and fasteners for a complete material package.'},
+  'Ladders':{color:'#6B4A2E',use:'Accessing elevated work areas, electrical panels, above-ceiling work, roofing, painting.',target:'All trades — electricians, HVAC, drywall, painters, GCs.',tip:'<b>Type matters:</b> Type 1A (300 lb.) fiberglass is the commercial standard — fiberglass = electrical safety. Werner = trusted brand. Lead with OSHA weight rating compliance; ladder failures are a major liability.'},
+  'Locks':{color:'#4A4A6B',use:'Jobsite security, equipment lockout/tagout (LOTO) compliance, storage containers.',target:'All contractors, safety managers, GCs requiring LOTO programs.',tip:'<b>LOTO volume sale:</b> OSHA LOTO standard requires individual locks per authorized employee. Sell sets of 6–12. Master-keyed sets for supervisors are an easy upsell.'},
+  'Lubricants':{color:'#5A6B3D',use:'Thread lube, anti-seize on bolts, penetrating oil for frozen fasteners, cutting oil for drilling and tapping.',target:'All trades — ironworkers, pipefitters, machinists, maintenance contractors.',tip:'<b>Bundle with consumables:</b> Every drill bit and tap set sale should include cutting oil — it triples tool life and is a $10–15 add-on. Anti-seize is critical for stainless and dissimilar metals.'},
+  'Marking Chalk':{color:'#5A5A3D',use:'Snap line layout for framing, concrete screeds, roofing, tile installation, rebar placement.',target:'Framers, concrete contractors, roofers, tile setters, carpenters.',tip:'<b>Chalk reel bundle:</b> Never sell chalk without asking if they need a chalk reel. Blue is standard; red for permanent; fluorescent for roofing. High-visibility chalk sells easily to outdoor concrete crews.'},
+  'Marking Paint':{color:'#5A3D5A',use:'Utility marking, rebar/anchor layout on concrete, jobsite boundaries, survey references.',target:'Concrete subs, survey crews, GCs, utility contractors.',tip:'<b>Volume opportunity:</b> Large concrete pours go through multiple cans. Ask about project scope — a big pour could be a 24-can order. Upside-down marking paint for wand applicators is a specialty item that earns loyalty.'},
+  'Measurement':{color:'#3D6B6B',use:'Tape measures, levels, layout tools for precise construction measurements.',target:'All trades.',tip:'<b>High-turnover item:</b> Tape measures take abuse and get lost constantly — sell multi-packs. Milwaukee and Stabila are brand-preferred. Add to every order as a suggested add-on.'},
+  'Milwaukee':{color:'#C8310A',use:'Full M18 cordless and corded power tools — drills, saws, impacts, grinders, pipe wrenches, pliers, and accessories for every trade.',target:'All trades on the Milwaukee M18 platform — electricians, plumbers, framers, concrete subs, ironworkers, GCs.',tip:'<b>Ecosystem advantage:</b> M18 is the #1 reason contractors standardize — one battery for every tool. Demo tools whenever possible. Highlight the 5-year tool warranty. Parts availability reduces replacement cost.'},
+  'Miscellaneous- Office, etc.':{color:'#888888',use:'Office and administrative supplies for business operations.',target:'Business owners, office managers.',tip:'<b>One-stop-shop:</b> Position as a convenience for contractors who already order tools and supplies — eliminate another vendor.'},
+  'POWER TOOL':{color:'#8E2E5A',use:'Angle grinders, corded saws, specialty power tools for heavy-duty cutting, grinding, and fabrication.',target:'Welders, fabricators, ironworkers, concrete contractors, GCs.',tip:'<b>Corded = continuous power:</b> Position corded tools for production applications where runtime matters. Metabo grinders are preferred by welders for durability. Ask about current brand and warranty needs.'},
+  'PPE':{color:'#2E6B8E',use:'Gloves, hard hats, safety glasses, hi-viz vests, coveralls, respirators, earplugs — mandatory OSHA PPE for all construction sites.',target:'All contractors, safety managers, GCs enforcing PPE compliance on job sites.',tip:'<b>Compliance + crew size = volume:</b> GCs require all subs to provide PPE — ask about crew size for bulk pricing. Tyvek coveralls are consumable. Safety glasses scratch and break — sell by the box of 10+. Build a "jobsite safety kit" bundle for new crews.'},
   'Paint':{color:'#5A8E5A',use:'Surface coating, marking, touch-up.',target:'General contractors, painting subs.',tip:'<b>Convenience sale:</b> Jobsite delivery of paint eliminates a supply house trip. Pair with application accessories.'},
-  'Parts Misc.':{color:'#888',use:'Replacement parts for tools and equipment.',target:'All trades with equipment needing maintenance.',tip:'<b>Downtime prevention:</b> Parts on hand mean equipment back in service faster. Position as a quick-source alternative to manufacturer lead times.'},
-  'Pipe Threader':{color:'#5A3D6B',use:'Cutting threads on pipe for plumbing, HVAC, and fire sprinkler systems.',target:'Plumbers, pipefitters, HVAC contractors, fire sprinkler contractors.',tip:'<b>Die replacement cycle:</b> Pipe dies wear out — ask how much pipe they thread per week. Sell complete die sets and position as a reorder reminder service.'},
-  'Poly Sheet':{color:'#3D5A3D',use:'Concrete curing blankets, weather protection, dust containment, vapor barrier, temporary enclosures.',target:'Concrete contractors, framers, drywall subs, GCs.',tip:'<b>Seasonal and project demand:</b> Cold-weather concreting drives poly sheet sales hard in winter. Pair with tape. Sell full rolls rather than partial — better margin and eliminates waste on large pours.'},
-  'Rigging':{color:'#6B3D2E',use:'Lifting slings, shackles, chains, hooks, wear pads — assembling rigging systems for crane picks and material lifting.',target:'Ironworkers, riggers, crane operators, millwrights, heavy construction GCs.',tip:'<b>Rated capacity is critical:</b> Rigging failures = fatalities — always confirm WLL (working load limit) for the application. Sell complete rigging assemblies rather than individual components. Wear pads extend sling life and protect loads — easy upsell with every sling sale. Annual rigging inspection is OSHA required — position as an inspection-triggered reorder contact.'},
-  'Safety':{color:'#8E6A2E',use:'First aid cabinets, jobsite canopies, heat illness prevention (drink mixes, freezer pops), general jobsite safety equipment.',target:'GCs, safety managers, large crews working in heat, all contractors with OSHA compliance requirements.',tip:'<b>Heat illness prevention = OSHA requirement:</b> Cal/OSHA and federal OSHA require heat illness prevention programs — drink mix and hydration supplies are not optional for warm-weather work. First aid cabinets are required at a threshold crew size. Canopies provide required shade. Sell safety supply "starter kits" to new GC customers.'},
-  'Saw Blade':{color:'#5A5A8E',use:'Cutting wood, metal, pipe, conduit, rebar, drywall depending on blade type — reciprocating, circular, chop saw, bandsaw.',target:'All trades by blade type: plumbers/electricians (recip blades for pipe and conduit), framers/carpenters (circ saw wood blades), ironworkers/welders (chop saw metal blades), HVAC.',tip:'<b>Match blade to material:</b> Wrong blade = slow cut, damaged material, blade failure. "What are you cutting and with what saw?" opens every blade conversation. Sell multi-packs of reciprocating blades — they break frequently. Chop saw metal blades are high-margin and consumed quickly by welding/fab crews.'},
-  'Screws':{color:'#3D6B3D',use:'Fastening drywall to steel and wood (drywall screws), steel framing connections (framer/tek screws), concrete attachment (blue concrete screws), sheet metal (reamer/pan head tek), general wood construction.',target:'Drywall subs, metal framers, concrete subs, MEP contractors, GCs.',tip:'<b>Bulk pricing drives volume:</b> Screws are a commodity — compete on bulk pricing and availability. Ask "how many boxes a week?" to set up standing orders. Know the substrate: drywall to LGS = fine thread; drywall to wood = coarse thread; concrete = blue Tapcon-style. Tek screws for metal framing are high-volume on commercial jobs — build a relationship with the framing foreman.'},
-  'Sealant':{color:'#5A3D8E',use:'Air and water sealing at penetrations, fire-rated caulk at rated assemblies, acoustical sealant for sound-rated walls.',target:'Drywall subs, GCs, insulation contractors, firestopping contractors.',tip:'<b>Code compliance angle:</b> Fire-rated sealant at penetrations is a code requirement — inspectors enforce it. Position as a compliance product, not just a sealing product. Acoustical sealant is required by spec in hotels, multifamily, and medical — ask about the project type.'},
-  'Service Charge':{color:'#888',use:'Delivery, rush fees, service charges.',target:'All customers.',tip:'<b>Delivery value:</b> Frame service charges as "we bring it to your jobsite" — the time savings often exceeds the fee. Build delivery charges into quotes transparently.'},
-  'Shop Supplies':{color:'#6B6B3D',use:'Jobsite consumables — trash bags, tape, rags, marking materials, heaters for cold-weather work, general maintenance supplies.',target:'All contractors, jobsite superintendents, GCs.',tip:'<b>Recurring consumable revenue:</b> Shop supplies are ordered repeatedly — set up a standing weekly or bi-weekly delivery. Heater sales spike in fall/winter; stock up early. Bundle with safety supply orders for convenience.'},
-  'Sockets':{color:'#4A4A6B',use:'Bolt tightening and loosening, general mechanical work with ratchet or breaker bar.',target:'All trades requiring fastener work — ironworkers, mechanics, plumbers, GCs.',tip:'<b>Deep vs. shallow, drive size:</b> Always confirm drive size (3/8", 1/2") and depth requirement before selling. Milwaukee SHOCKWAVE impact-rated sockets upsell easily from standard chrome. Sell sets rather than individual sockets for better margin.'},
-  'Tap & Die Set':{color:'#6B4A6B',use:'Cutting new threads in metal, repairing damaged threads on bolts and tapped holes, chasing stripped threads.',target:'Ironworkers, machinists, maintenance contractors, fabricators, pipefitters.',tip:'<b>Thread repair = urgent need:</b> Stripped threads mean stopped work — tap sets are often an emergency purchase. HSS taps handle harder metals; pitch the HSS upgrade when the customer mentions stainless or alloy steel. Always pair with cutting oil — it\'s mandatory for tap life. Sets wear out = recurring replacement sale.'},
+  'Parts Misc.':{color:'#888888',use:'Replacement parts for tools and equipment.',target:'All trades with equipment needing maintenance.',tip:'<b>Downtime prevention:</b> Parts on hand mean equipment back in service faster. Position as a quick-source alternative to manufacturer lead times.'},
+  'Pipe Threader':{color:'#5A3D6B',use:'Cutting threads on pipe for plumbing, HVAC, and fire sprinkler systems.',target:'Plumbers, pipefitters, HVAC contractors, fire sprinkler contractors.',tip:'<b>Die replacement cycle:</b> Pipe dies wear out — ask how much pipe they thread per week and set a reorder cadence. Sell complete die sets.'},
+  'Poly Sheet':{color:'#3D5A3D',use:'Concrete curing, weather protection, dust containment, vapor barrier, temporary enclosures.',target:'Concrete contractors, framers, drywall subs, GCs.',tip:'<b>Seasonal demand:</b> Cold-weather concreting drives poly sheet sales in winter. Pair with tape. Sell full rolls — better margin and eliminates waste on large pours.'},
+  'Rigging':{color:'#6B3D2E',use:'Lifting slings, shackles, chains, hooks, wear pads — assembling rigging systems for crane picks and material lifting.',target:'Ironworkers, riggers, crane operators, millwrights, heavy construction GCs.',tip:'<b>Rated capacity is critical:</b> Rigging failures are fatal — always confirm WLL for the application. Sell complete assemblies. Wear pads extend sling life — easy upsell with every sling. OSHA annual inspection = reorder contact.'},
+  'Safety':{color:'#8E6A2E',use:'First aid cabinets, jobsite canopies, heat illness prevention (drink mixes, freezer pops), general jobsite safety equipment.',target:'GCs, safety managers, large crews in heat, all contractors with OSHA compliance requirements.',tip:'<b>Heat illness = OSHA requirement:</b> Federal OSHA requires heat illness prevention programs — drink mix and hydration supplies are not optional in warm weather. First aid cabinets are required at threshold crew sizes. Sell safety "starter kits" to new GC customers.'},
+  'Saw Blade':{color:'#5A5A8E',use:'Cutting wood, metal, pipe, conduit, rebar depending on blade type — reciprocating, circular, chop saw, bandsaw.',target:'All trades by blade type: plumbers/electricians (recip blades), framers/carpenters (circ saw wood), ironworkers/welders (chop saw metal).',tip:'<b>Match blade to material:</b> Wrong blade = slow cut, damaged material, blade failure. "What are you cutting and with what saw?" opens every blade conversation. Sell multi-packs of recip blades — they break frequently.'},
+  'Screws':{color:'#3D6B3D',use:'Fastening drywall to steel and wood, steel framing connections, concrete attachment, sheet metal, general wood construction.',target:'Drywall subs, metal framers, concrete subs, MEP contractors, GCs.',tip:'<b>Bulk pricing drives volume:</b> Screws are a commodity — compete on bulk pricing and availability. Ask "how many boxes a week?" for standing orders. Know the substrate: drywall to LGS = fine thread; drywall to wood = coarse thread; concrete = blue Tapcon-style.'},
+  'Sealant':{color:'#5A3D8E',use:'Air and water sealing at penetrations, fire-rated caulk at rated assemblies, acoustical sealant for sound-rated walls.',target:'Drywall subs, GCs, insulation contractors, firestopping contractors.',tip:'<b>Code compliance angle:</b> Fire-rated sealant at penetrations is a code requirement — inspectors enforce it. Acoustical sealant is required by spec in hotels, multifamily, and medical buildings.'},
+  'Service Charge':{color:'#888888',use:'Delivery, rush fees, service charges.',target:'All customers.',tip:'<b>Delivery value:</b> Frame service charges as "we bring it to your jobsite." The time savings often exceeds the fee. Build delivery charges into quotes transparently.'},
+  'Shop Supplies':{color:'#6B6B3D',use:'Jobsite consumables — trash bags, tape, rags, heaters for cold-weather work, general maintenance supplies.',target:'All contractors, jobsite superintendents, GCs.',tip:'<b>Recurring consumable revenue:</b> Shop supplies are ordered repeatedly — set up a standing weekly or bi-weekly delivery. Heater sales spike in fall/winter; stock up early. Bundle with safety supply orders.'},
+  'Sockets':{color:'#4A4A6B',use:'Bolt tightening and loosening, general mechanical work with ratchet or breaker bar.',target:'All trades requiring fastener work — ironworkers, mechanics, plumbers, GCs.',tip:'<b>Drive size and depth:</b> Always confirm drive size (3/8", 1/2") before selling. Milwaukee SHOCKWAVE impact-rated sockets upsell easily from standard chrome. Sell sets rather than individual sockets.'},
+  'Tap & Die Set':{color:'#6B4A6B',use:'Cutting new threads in metal, repairing damaged threads on bolts and tapped holes, chasing stripped threads.',target:'Ironworkers, machinists, maintenance contractors, fabricators, pipefitters.',tip:'<b>Thread repair = urgent need:</b> Stripped threads mean stopped work — often an emergency purchase. HSS taps handle harder metals — pitch the upgrade for stainless or alloy steel. Always pair with cutting oil.'},
   'Tension Tie':{color:'#3D6B5A',use:'Structural tension connections, hold-downs, shear connections in light-gauge framing.',target:'Framers, structural engineers, GCs on engineered framing systems.',tip:'<b>Engineered system sale:</b> Tension ties are often spec\'d by the structural engineer — know the spec number. Pair with the compatible screws and installation instructions.'},
-  'Threaded Rod':{color:'#5A6B6B',use:'Structural hanging systems, pipe/duct hanger rods, seismic bracing, anchor bolt extensions, all-thread for custom fastening.',target:'MEP contractors (pipe/duct hangers), ironworkers, concrete subs (anchor bolts), GCs.',tip:'<b>Bundle the system:</b> Threaded rod alone is rarely the whole order — sell with compatible hex nuts and flat washers. Ask about rod diameter, grade, and length. Stainless upgrade for corrosive environments (kitchens, pools, coastal). High-volume MEP jobs go through dozens of sticks — set up a project account.'},
-  'Vise':{color:'#6B3D6B',use:'Holding pipe, stock, or work pieces during cutting, threading, forming, and welding operations.',target:'Plumbers, pipefitters, fabricators, machinists.',tip:'<b>Bench setup sale:</b> A vise sale often means a new shop or service truck setup — ask what else they need for the bench. Pipe vise vs. machinist vise distinction matters — always confirm application.'},
-  'WELDING':{color:'#8E3D2E',use:'Structural and specialty welding — gloves, consumables, and welding accessories.',target:'Welders, ironworkers, fabricators, maintenance contractors.',tip:'<b>Bundle PPE with consumables:</b> Welding gloves are consumed heavily in production welding — sell by the case. Pair welding supplies with abrasives (flap discs for weld cleanup) and safety glasses (shade 5 for grinding). Build a relationship with the shop foreman for recurring consumable orders.'},
-  'Water':{color:'#2E5A8E',use:'Jobsite hydration for workers.',target:'GCs, large crew superintendents.',tip:'<b>OSHA heat illness requirement:</b> Fresh drinking water is required by OSHA on construction sites. Position as part of a complete heat illness prevention package with drink mix and shade.'},
-  'Water Hose':{color:'#2E6B5A',use:'Concrete curing, dust suppression, equipment washdown, general water delivery on jobsite.',target:'Concrete contractors, masonry contractors, GCs.',tip:'<b>Durability pitch:</b> Jobsite hoses take abuse — sell commercial-grade over consumer grade. Pair with spray nozzle and hose reel if they have a large site.'},
+  'Threaded Rod':{color:'#5A6B6B',use:'Structural hanging systems, pipe/duct hanger rods, seismic bracing, anchor bolt extensions, all-thread for custom fastening.',target:'MEP contractors (pipe/duct hangers), ironworkers, concrete subs, GCs.',tip:'<b>Bundle the system:</b> Threaded rod alone is rarely the whole order — sell with compatible hex nuts and flat washers. Ask about rod diameter, grade, and length. High-volume MEP jobs go through dozens of sticks — set up a project account.'},
+  'Vise':{color:'#6B3D6B',use:'Holding pipe, stock, or work pieces during cutting, threading, forming, and welding.',target:'Plumbers, pipefitters, fabricators, machinists.',tip:'<b>Bench setup sale:</b> A vise sale often means a new shop or service truck setup — ask what else they need. Pipe vise vs. machinist vise distinction matters — always confirm application.'},
+  'WELDING':{color:'#8E3D2E',use:'Structural and specialty welding — gloves, consumables, and welding accessories.',target:'Welders, ironworkers, fabricators, maintenance contractors.',tip:'<b>Bundle PPE with consumables:</b> Welding gloves are consumed heavily — sell by the case. Pair with abrasives (flap discs for weld cleanup) and safety glasses. Build a relationship with the shop foreman for recurring orders.'},
+  'Water':{color:'#2E5A8E',use:'Jobsite hydration for workers.',target:'GCs, large crew superintendents.',tip:'<b>OSHA heat illness requirement:</b> Fresh drinking water is required by OSHA on construction sites. Position as part of a complete heat illness prevention package with drink mix and shade canopy.'},
+  'Water Hose':{color:'#2E6B5A',use:'Concrete curing, dust suppression, equipment washdown, general water delivery on jobsite.',target:'Concrete contractors, masonry contractors, GCs.',tip:'<b>Durability pitch:</b> Jobsite hoses take abuse — sell commercial-grade over consumer grade. Pair with spray nozzle and hose reel for large sites.'}
 };
-
-const defaultInfo = {
-  use:'General jobsite supply item for commercial construction applications.',
-  target:'General contractors, specialty subcontractors, and construction crews.',
-  tip:'<b>Know your customer:</b> Ask about their current project type and crew size to recommend the right quantity and configuration. Build a relationship for recurring orders.'
-};
-
-function getInfo(cat) {
-  const parent = cat.split(':')[0];
-  return catInfo[parent] || defaultInfo;
-}
-
-const data = [
+const DEF={color:'#888888',use:'General jobsite supply item for commercial construction applications.',target:'General contractors, specialty subcontractors, and construction crews.',tip:'<b>Know your customer:</b> Ask about their current project type and crew size to recommend the right quantity and configuration. Build a relationship for recurring orders.'};
+function ci(cat){return CI[cat.split(':')[0]]||DEF;}
+ 
+const data=[
 {n:'100 Ft. 12/3 SJTW Exten. Cord w/ Lighted Ends Yellow',s:'05-00366',c:'Extension Cord',p:'$150.34',q:19},
 {n:'#10-16 x 1-5/8 Flat Head Reamer Phillips Tek Zinc (4M Bulk)',s:'R158',c:'Screws:Reamer',p:'$42.88',q:32},
 {n:'#10-16 x 5/8 Pan Head Phillips Tek Zinc (10M Bulk)',s:'P105',c:'Screws:Framer',p:'$22.93',q:40},
@@ -1113,109 +1102,85 @@ const data = [
 {n:'Welding Gloves Split Cowhide Shoulder Split Blue Large',s:'902-300GC',c:'PPE:Gloves',p:'$20.51',q:6},
 {n:'WEP15-150Q 6" Metabo Grinder',s:'469-WEP15-150Q',c:'POWER TOOL',p:'$349.99',q:0}
 ];
-const allCats = [...new Set(data.map(d => d.c.split(':')[0]).filter(Boolean))].sort();
-let activecat = 'all';
-let activetabs = {};
-
-function qColor(q) {
-  if (q > 5) return 'qty-in';
-  if (q > 0) return 'qty-low';
-  return 'qty-zero';
-}
-function qLabel(q) {
-  if (q > 0) return `${q} in stock`;
-  return 'Out of stock';
-}
-
-function render() {
-  const q = document.getElementById('search').value.toLowerCase();
-  const filtered = data.filter(d => {
-    const mc = activecat === 'all' || d.c.split(':')[0] === activecat;
-    const mq = !q || d.n.toLowerCase().includes(q) || d.s.toLowerCase().includes(q) || d.c.toLowerCase().includes(q);
-    return mc && mq;
+ 
+const allCats=[...new Set(data.map(d=>d.c.split(':')[0]).filter(Boolean))].sort();
+let acat='all';
+ 
+function qcls(q){return q>5?'qty-in':q>0?'qty-low':'qty-out';}
+function qlbl(q){return q>5?q+' in stock':q>0?q+' (low)':'Out of stock';}
+function ccls(q){return q>5?'card-in':q>0?'card-low':'card-out';}
+ 
+let uid=0;
+function render(){
+  const q=document.getElementById('search').value.toLowerCase();
+  const fd=data.filter(d=>{
+    const mc=acat==='all'||d.c.split(':')[0]===acat;
+    const mq=!q||d.n.toLowerCase().includes(q)||d.s.toLowerCase().includes(q)||d.c.toLowerCase().includes(q);
+    return mc&&mq;
   });
-
-  document.getElementById('stats').textContent = filtered.length + ' of ' + data.length + ' products';
-
-  const byCat = {};
-  filtered.forEach(d => {
-    const pc = d.c.split(':')[0] || 'Uncategorized';
-    if (!byCat[pc]) byCat[pc] = [];
-    byCat[pc].push(d);
-  });
-
-  let html = '';
-  if (filtered.length === 0) {
-    html = '<div class="empty">No products match your search.</div>';
-  } else {
-    const order = activecat === 'all'
-      ? Object.keys(byCat).sort()
-      : [activecat];
-    order.forEach(pc => {
-      if (!byCat[pc]) return;
-      const ci = catInfo[pc] || {color:'#888'};
-      const items = byCat[pc];
-      html += `<div class="section">
-        <div class="section-hdr">
-          <span class="dot" style="background:${ci.color}"></span>
-          ${pc} <span class="scnt">(${items.length})</span>
-        </div>
-        <div class="grid">`;
-      items.forEach(d => {
-        const info = getInfo(d.c);
-        const tid = d.s.replace(/[^a-z0-9]/gi,'_');
-        const stockClass = d.q > 5 ? 'in-stock' : d.q > 0 ? 'low-stock' : '';
-        html += `<div class="card ${stockClass}">
-          <div class="left">
-            <div class="sku-badge">${d.s}</div>
-            <div class="price-tag">${d.p}</div>
-            <div class="qty-tag ${qColor(d.q)}">${qLabel(d.q)}</div>
-          </div>
-          <div class="card-body">
-            <div class="card-name">${d.n}</div>
-            <div class="card-cat">${d.c || 'Uncategorized'}</div>
-            <div class="tabs">
-              <span class="tab active" onclick="showTab('${tid}','use',this)">Use Cases</span>
-              <span class="tab" onclick="showTab('${tid}','tgt',this)">Customers</span>
-              <span class="tab" onclick="showTab('${tid}','tip',this)">Sales Tips</span>
-            </div>
-            <div id="${tid}_use" class="tab-content active">${info.use}</div>
-            <div id="${tid}_tgt" class="tab-content">${info.target}</div>
-            <div id="${tid}_tip" class="tab-content"><div class="tip-row"><span class="tip-label">Sales Strategy</span>${info.tip}</div></div>
-          </div>
-        </div>`;
+  document.getElementById('stats').textContent=fd.length+' of '+data.length+' products';
+  const bc={};
+  fd.forEach(d=>{const pc=d.c.split(':')[0]||'Other';if(!bc[pc])bc[pc]=[];bc[pc].push(d);});
+  let h='';
+  if(!fd.length){h='<div class="empty">No products match your search.</div>';}
+  else{
+    const ord=acat==='all'?Object.keys(bc).sort():[acat];
+    ord.forEach(pc=>{
+      if(!bc[pc])return;
+      const inf=ci(pc);
+      h+=`<div class="section"><div class="section-hdr"><span class="dot" style="background:${inf.color}"></span>${pc} <span class="scnt">(${bc[pc].length})</span></div><div class="grid">`;
+      bc[pc].forEach(d=>{
+        const id='c'+(uid++);
+        h+=`<div class="card ${ccls(d.q)}">
+<div class="left">
+<div class="sku-badge">${d.s}</div>
+<div class="price-tag">${d.p}</div>
+<div class="qty-tag ${qcls(d.q)}">${qlbl(d.q)}</div>
+</div>
+<div class="card-body">
+<div class="card-name">${d.n}</div>
+<div class="card-cat">${d.c||'Other'}</div>
+<div class="tabs">
+<button class="tab on" onclick="st('${id}','u',this)">Use Cases</button>
+<button class="tab" onclick="st('${id}','t',this)">Customers</button>
+<button class="tab" onclick="st('${id}','s',this)">Sales Tips</button>
+</div>
+<div id="${id}_u" class="pane on">${inf.use}</div>
+<div id="${id}_t" class="pane">${inf.target}</div>
+<div id="${id}_s" class="pane"><div class="tip-box"><span class="tip-lbl">Sales Strategy</span>${inf.tip}</div></div>
+</div></div>`;
       });
-      html += '</div></div>';
+      h+='</div></div>';
     });
   }
-  document.getElementById('output').innerHTML = html;
+  document.getElementById('output').innerHTML=h;
 }
-
-function showTab(tid, panel, el) {
-  const card = el.closest('.card-body');
-  card.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
-  card.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
-  el.classList.add('active');
-  document.getElementById(tid+'_'+panel).classList.add('active');
+ 
+function st(id,panel,el){
+  const cb=el.closest('.card-body');
+  cb.querySelectorAll('.tab').forEach(t=>t.classList.remove('on'));
+  cb.querySelectorAll('.pane').forEach(p=>p.classList.remove('on'));
+  el.classList.add('on');
+  document.getElementById(id+'_'+panel).classList.add('on');
 }
-
-function buildFilters() {
-  const row = document.getElementById('filters');
-  let h = '<span class="pill active" onclick="setcat(\'all\',this)">All</span>';
-  allCats.forEach(c => {
-    const ci = catInfo[c] || {color:'#888'};
-    h += `<span class="pill" onclick="setcat('${c}',this)" style="border-left:3px solid ${ci.color}">${c}</span>`;
+ 
+function buildFilters(){
+  const row=document.getElementById('filters');
+  let h='<span class="pill active" onclick="sc(\'all\',this)">All</span>';
+  allCats.forEach(c=>{
+    const col=(CI[c]||DEF).color;
+    h+=`<span class="pill" onclick="sc('${c}',this)" style="border-left:3px solid ${col}">${c}</span>`;
   });
-  row.innerHTML = h;
+  row.innerHTML=h;
 }
-
-function setcat(id, el) {
-  activecat = id;
-  document.querySelectorAll('.pill').forEach(p => p.classList.remove('active'));
+ 
+function sc(id,el){
+  acat=id;
+  document.querySelectorAll('.pill').forEach(p=>p.classList.remove('active'));
   el.classList.add('active');
   render();
 }
-
+ 
 buildFilters();
 render();
 </script>
